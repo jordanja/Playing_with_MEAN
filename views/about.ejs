@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+    <body>
+        <h1><%= title %></h1>
+        <% include templetes/header.ejs %>
+        <input type="text" id="place_search" required class="form-control input-lg" placeholder="Search campsites">
+        <button class="btn btn-default btn-lg" type="button" onclick="initMap()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+
+        <div id="map"></div>
+        <script src="js/about.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDevEIaBuH93BfqsocLz8AZMZkPkS_638&libraries=places&callback=initMap" async defer></script>
+    </body>
+</html>

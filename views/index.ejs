@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../routes/index.js"></script>
+
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <% include templetes/header.ejs %>
+        <ul>
+            <% for (var i=0; i<5; i++) { %>
+                <li>
+                    <%= name%>
+                </li>
+            <% } %>
+        </ul>
+
+        <button type="button" class="btn btn-default" onclick="hello()">Default</button>
+
+
+
+        <p>new stuff<br><br></p>
+
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+        <div id="type-selector" class="controls">
+            <input type="radio" name="type" id="changetype-all" checked="checked">
+            <label for="changetype-all">All</label>
+
+            <input type="radio" name="type" id="changetype-establishment">
+            <label for="changetype-establishment">Establishments</label>
+
+            <input type="radio" name="type" id="changetype-address">
+            <label for="changetype-address">Addresses</label>
+
+            <input type="radio" name="type" id="changetype-geocode">
+            <label for="changetype-geocode">Geocodes</label>
+        </div>
+        <div id="map"></div>
+        <script src="js/index.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey%>&libraries=places&callback=otherMap" async defer></script>
+
+
+
+
+
+
+    </body>
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDevEIaBuH93BfqsocLz8AZMZkPkS_638&libraries=places"></script>
+</html>
